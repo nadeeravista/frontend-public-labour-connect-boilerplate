@@ -1,0 +1,43 @@
+---
+alwaysApply: true
+---
+
+- This is a Next.js project following MVVM pattern
+- Move all the logic to user hook belongs to a page.tsx eg: userHomePage
+- Avoid having logics in other components unless its very specific for the component and
+- Always try to create Controlled components
+- Do not add svg tags inside tsx files move them to public/images/svg
+- All the query should use either useQuery or useMutation
+
+eg:-
+
+```
+const { data: userdata } = useQuery("get", "/user/me", undefined, {
+  enabled: false,
+});
+
+const { data: providersData,isLoading: isLoadingProviders,refetch,} = useQuery("get", "/provider", {
+  params: { query: { params } },
+});
+
+const { mutateAsync: createServiceRequest, isPending: isSubmitting } = useMutation("post", "/service-request");
+
+const result = await createServiceRequest({ body: requestData });
+
+const {
+  mutateAsync: deleteProviderAttachment,
+  isPending: isDeletingAttachment,
+} = useMutation(
+  "delete",
+  "/provider/{providerId}/attachment/{attachmentId}" as any,
+);
+
+await deleteProviderAttachment({
+  params: {
+    path: {
+      providerId: provider.id,
+      attachmentId,
+    },
+  },
+});
+```
