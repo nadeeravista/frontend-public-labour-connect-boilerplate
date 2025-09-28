@@ -30,16 +30,16 @@ Built with Next.js using TypeScript. Uses Jotai for state management instead of 
 ### API & Data
 
 - **Swagger/OpenAPI** - API documentation
-- **React Query** - Server state management
+- **React Query** - fetching, caching, synchronizing and updating server state
 
 ### Development Tools
 
 - **Storybook** - Component documentation
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **Husky** - Git hooks
-- **Lint-staged** - Pre-commit linting
-- **Commitizen** - Semantic commits
+- **ESLint** - Code linting - code quality
+- **Prettier** - Code formatting - code quality
+- **Husky** - Git hooks - code quality
+- **Lint-staged** - Pre-commit linting - code quality
+- **Commitizen** - Semantic commits - code quality
 
 ### Testing
 
@@ -49,8 +49,8 @@ Built with Next.js using TypeScript. Uses Jotai for state management instead of 
 
 ### Deployment
 
-- **Netlify** - Deployment
-- **Railway** - Alternative deployment
+- **Netlify** - Frontend
+- **Railway** - Backend
 
 ### Project Management
 
@@ -60,7 +60,7 @@ Built with Next.js using TypeScript. Uses Jotai for state management instead of 
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22+
 - npm or yarn
 
 ### Installation
@@ -117,21 +117,10 @@ This project enforces **semantic commit messages** for better project history an
 - `ci:` - CI/CD changes
 - `chore:` - Maintenance tasks
 
-### Using Commitizen
+### Using Commitizen - commit helper
 
 ```bash
 npm run commit
-```
-
-This will guide you through creating a semantic commit message interactively.
-
-### Example Commits
-
-```bash
-feat: add user authentication with Auth0
-fix: resolve responsive layout issues
-docs: update API documentation
-refactor: improve component structure
 ```
 
 ## 🏗️ Project Structure
@@ -164,26 +153,10 @@ src/
 
 ## 🌟 Technology Highlights
 
-### Modern React Patterns
-
-- **Server Components** - Latest React 19 features
-- **Concurrent Rendering** - Improved user experience
-- **Custom Hooks** - Reusable state logic
-- **Atomic State Management** - Simple Jotai atoms vs complex Redux boilerplate
-
 ### TypeScript Excellence
 
 - **Strict Mode** - Maximum type safety
 - **Auto-generated Types** - From OpenAPI specifications
-- **Interface Segregation** - Clean type definitions
-- **Generic Components** - Reusable typed components
-
-### Performance Optimizations
-
-- **Bundle Analysis** - Optimized bundle sizes
-- **Lazy Loading** - Code splitting strategies
-- **Caching Strategies** - Efficient data fetching
-- **Image Optimization** - Next.js image component
 
 ## 📸 Technology Showcase
 
@@ -239,17 +212,11 @@ This project implements a comprehensive testing strategy using Jest and React Te
 
 ### Testing Framework
 
-- **Jest** - Fast, zero-config testing framework
-- **React Testing Library** - Simple and complete testing utilities
-- **Jest DOM** - Custom Jest matchers for DOM elements
-- **TypeScript Support** - Full type safety in tests
+- **Jest** -
 
 ### Test Coverage
 
 - **Component Testing** - UI component behavior and rendering
-- **Hook Testing** - Custom React hooks functionality
-- **Integration Testing** - Component interaction testing
-- **Coverage Reports** - HTML, LCOV, JSON, and text formats
 
 ### Available Test Commands
 
@@ -262,12 +229,6 @@ npm run test:watch
 
 # Run tests with coverage
 npm run test:coverage
-
-# Run tests with coverage in watch mode
-npm run test:coverage:watch
-
-# Run tests for CI/CD
-npm run test:coverage:ci
 ```
 
 ### Test Structure
@@ -287,32 +248,6 @@ src/
     └── jest.d.ts                 # Jest type definitions
 ```
 
-### Coverage Configuration
-
-- **Coverage Thresholds** - 25% minimum coverage (adjustable)
-- **Focused Coverage** - Only tests components being tested
-- **Multiple Reporters** - Text, HTML, LCOV, JSON formats
-- **Excluded Files** - Test files, stories, types, and utilities
-
-### Testing Best Practices
-
-- **Component Isolation** - Test components in isolation
-- **User-Centric Testing** - Test from user perspective
-- **Mocking Strategy** - Mock external dependencies
-- **Coverage Goals** - Maintain high test coverage
-
-### Pre-commit Testing
-
-Tests are automatically run on pre-commit hooks via Husky and lint-staged:
-
-```json
-{
-  "lint-staged": {
-    "src/**/*.test.{ts,tsx}": [
-      "jest --passWithNoTests --coverage --coverageReporters=text"
-    ]
-  }
-}
 ```
 
 ## 📖 Additional Resources
@@ -330,3 +265,4 @@ Tests are automatically run on pre-commit hooks via Husky and lint-staged:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
