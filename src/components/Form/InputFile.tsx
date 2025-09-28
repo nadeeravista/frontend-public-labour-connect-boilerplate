@@ -1,6 +1,5 @@
 import React from "react";
-import { formatFileSize } from "@/utils/file-upload.utils";
-import { SchemaTypes } from "@/types/generated.types";
+import { SchemaTypes } from "@/types/api/generated.types";
 type AttachmentDto = SchemaTypes["AttachmentDto"];
 
 interface InputFileProps {
@@ -136,9 +135,7 @@ const InputFile: React.FC<InputFileProps> = ({
                 <span className="text-sm text-gray-700 dark:text-gray-300">
                   {file.name}
                 </span>
-                <span className="text-xs text-gray-500 dark:text-gray-500">
-                  ({formatFileSize(file.size)} MB)
-                </span>
+                <span className="text-xs text-gray-500 dark:text-gray-500"></span>
               </div>
               <button
                 type="button"

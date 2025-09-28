@@ -43,8 +43,9 @@ Built with Next.js using TypeScript. Uses Jotai for state management instead of 
 
 ### Testing
 
-- **Vitest** - Unit testing
-- **Accessibility Testing**
+- **Jest** - Unit testing framework
+- **React Testing Library** - Component testing utilities
+- **Coverage Reports** - Code coverage analysis
 
 ### Deployment
 
@@ -75,12 +76,16 @@ npm run dev
 ### Commands
 
 ```bash
-npm run dev          # Development server
-npm run build        # Build for production
-npm run storybook    # Component documentation
-npm run lint         # Linting
-npm run format       # Code formatting
-npm run types:gen    # Generate API types
+npm run dev              # Development server
+npm run build            # Build for production
+npm run storybook        # Component documentation
+npm run lint             # Linting
+npm run format           # Code formatting
+npm run types:gen        # Generate API types
+npm run test             # Run tests
+npm run test:watch       # Run tests in watch mode
+npm run test:coverage    # Run tests with coverage
+npm run test:coverage:watch  # Run tests with coverage in watch mode
 ```
 
 ## Documentation
@@ -220,6 +225,96 @@ _Auto-generated API documentation with Swagger/OpenAPI_
 ![Semantic Commits](docs/semantic-commits.png)
 _Structured commit workflow with semantic commits_
 
+### 🧪 Testing & Quality Assurance
+
+![Jest Testing](docs/jest-testing.png)
+_Comprehensive unit testing with Jest and React Testing Library_
+
+![Coverage Report](docs/coverage-report.png)
+_Code coverage analysis with detailed reporting_
+
+## 🧪 Testing & Quality Assurance
+
+This project implements a comprehensive testing strategy using Jest and React Testing Library, ensuring code quality and reliability.
+
+### Testing Framework
+
+- **Jest** - Fast, zero-config testing framework
+- **React Testing Library** - Simple and complete testing utilities
+- **Jest DOM** - Custom Jest matchers for DOM elements
+- **TypeScript Support** - Full type safety in tests
+
+### Test Coverage
+
+- **Component Testing** - UI component behavior and rendering
+- **Hook Testing** - Custom React hooks functionality
+- **Integration Testing** - Component interaction testing
+- **Coverage Reports** - HTML, LCOV, JSON, and text formats
+
+### Available Test Commands
+
+```bash
+# Run all tests
+npm run test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests with coverage in watch mode
+npm run test:coverage:watch
+
+# Run tests for CI/CD
+npm run test:coverage:ci
+```
+
+### Test Structure
+
+```
+src/
+├── components/
+│   ├── Button.test.tsx          # Component tests
+│   ├── CardHeader.test.tsx       # Component tests
+│   └── Form/
+│       └── Input.test.tsx        # Form component tests
+├── app/
+│   └── backend/admin/request/
+│       ├── page.test.tsx         # Page component tests
+│       └── useServiceRequestsPage.test.ts  # Hook tests
+└── types/
+    └── jest.d.ts                 # Jest type definitions
+```
+
+### Coverage Configuration
+
+- **Coverage Thresholds** - 25% minimum coverage (adjustable)
+- **Focused Coverage** - Only tests components being tested
+- **Multiple Reporters** - Text, HTML, LCOV, JSON formats
+- **Excluded Files** - Test files, stories, types, and utilities
+
+### Testing Best Practices
+
+- **Component Isolation** - Test components in isolation
+- **User-Centric Testing** - Test from user perspective
+- **Mocking Strategy** - Mock external dependencies
+- **Coverage Goals** - Maintain high test coverage
+
+### Pre-commit Testing
+
+Tests are automatically run on pre-commit hooks via Husky and lint-staged:
+
+```json
+{
+  "lint-staged": {
+    "src/**/*.test.{ts,tsx}": [
+      "jest --passWithNoTests --coverage --coverageReporters=text"
+    ]
+  }
+}
+```
+
 ## 📖 Additional Resources
 
 - [Next.js Documentation](https://nextjs.org/docs)
@@ -228,6 +323,9 @@ _Structured commit workflow with semantic commits_
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Auth0 Documentation](https://auth0.com/docs)
 - [Storybook Documentation](https://storybook.js.org/docs)
+- [Jest Documentation](https://jestjs.io/docs/getting-started)
+- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro)
+- [Jest DOM Documentation](https://github.com/testing-library/jest-dom)
 
 ## License
 
